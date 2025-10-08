@@ -1,47 +1,68 @@
-.news-detail {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 1rem;
+.news-detail-container {
+  padding: 2rem;
+  background-color: var(--surface-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-.news-detail h1 {
-  font-size: 2rem;
-  font-weight: bold;
+.news-title {
+  font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: #333;
+  line-height: 1.2;
 }
 
 .news-meta {
   display: flex;
-  gap: 1rem;
-  color: #666;
-  margin-bottom: 1rem;
+  gap: 1.5rem;
+  color: var(--text-muted-color);
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
 }
 
 .news-content {
-  line-height: 1.6;
-  color: #444;
-  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #343a40;
 }
 
-.news-detail button {
-  padding: 0.5rem 1rem;
-  background-color: #ffffff;
-  border: 1px solid #333;
-  border-radius: 4px;
+/* Styles for the Like Section */
+.like-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.like-button {
+  padding: 0.6rem 1.2rem;
+  background-color: var(--surface-color);
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  border-radius: 5px;
   cursor: pointer;
+  font-weight: 600;
   transition: all 0.2s ease;
 }
 
-.news-detail button:hover {
-  background-color: #f5f5f5;
-}
-
-.news-detail button.liked {
-  background-color: #333;
+.like-button:hover {
+  background-color: var(--primary-color);
   color: white;
 }
 
-.news-detail button.liked:hover {
-  background-color: #444;
+/* This class is added when the post is liked */
+.like-button.liked {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.like-button.liked:hover {
+  background-color: var(--primary-hover-color);
+  border-color: var(--primary-hover-color);
+}
+
+.like-section span {
+  font-weight: 500;
+  color: var(--text-muted-color);
 }

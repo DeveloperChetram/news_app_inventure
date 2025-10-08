@@ -76,10 +76,10 @@ const CreateNews = () => {
           )}
         </div>
 
-        <div className='form-group'>
+            <div className='form-group form-group-checkbox'>
           <label>
             <input type='checkbox' {...register('published')} />
-            Published
+            <span>Published</span>
           </label>
         </div>
 
