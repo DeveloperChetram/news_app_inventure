@@ -6,8 +6,10 @@ import Home from './components/Home';
 import NewsDetail from './components/NewsDetail';
 import AdminDashboard from './components/AdminDashboard';
 import Navbar from './components/Navbar';
-import AdminRoute from './components/AdminRoute'; // Import the protected route
+import AdminRoute from './components/AdminRoute';
+import EditNews from './components/EditNews'; // Import the new edit component
 import './App.css';
+import NotFound from './components/NotFound';
 
 const App = () => {
   return (
@@ -17,6 +19,7 @@ const App = () => {
         <main className='main-content'>
           <Routes>
             {/* Public Routes */}
+            <Route path='*' element={<NotFound />} />
             <Route path='/' element={<Home />} />
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
@@ -25,8 +28,9 @@ const App = () => {
             {/* Protected Admin Routes */}
             <Route element={<AdminRoute />}>
               <Route path='/admin' element={<AdminDashboard />} />
-              {/* You can add more admin-only routes here */}
+              <Route path='/admin/news/edit/:id' element={<EditNews />} /> {/* Add edit route */}
             </Route>
+
           </Routes>
         </main>
       </div>

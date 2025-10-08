@@ -1,5 +1,18 @@
 import { newsModel } from "../models/news.model.js";
 
+export const getAllNewsAdminController = async (req, res) => {
+    try {
+        const news = await newsModel.find({}).populate("categoryId authorId");
+        res.status(200).json({
+            message: "All news fetched successfully for admin",
+            news,
+        });
+    } catch (error) {
+        console.log(error);
+        return res.status(500).send("internal server error");
+    }
+};
+
 export const createNewsController = async (req, res) => {
     try {
         const { title, content, published, categoryId } = req.body;
