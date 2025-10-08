@@ -25,7 +25,7 @@ const newsSchema = new mongoose.Schema({
         default:false
     },
     likes:{
-        type:'Object',
+        type:Map, //used ai because in object there was having issue 
         default:{}
     },
 
