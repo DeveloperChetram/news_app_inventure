@@ -1,7 +1,9 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import api from '../api/axios'; // Import the new api instance
+import api from '../api/axios';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setCredentials } from '../redux/authSlice'; // Import the action
 import '../styles/Auth.css';
 
 const Login = () => {
@@ -11,18 +13,31 @@ const Login = () => {
     formState: { errors },
   } = useForm();
   const navigate = useNavigate();
+  const dispatch = useDispatch(); // Get the dispatch function
 
   const onSubmit = async (data) => {
     try {
-      // Use the pre-configured 'api' instance
       const response = await api.post('/api/auth/login', data);
+      const user = response.data.user;
+      
+      // Dispatch the action to save user credentials
+      dispatch(setCredentials(user));
+      
       console.log(response.data);
-      navigate('/');
+
+      // Navigate to admin page if admin, otherwise to home
+      if (user.role === 'admin') {
+        navigate('/admin');
+      } else {
+        navigate('/');
+      }
     } catch (error) {
       console.error(error);
+      alert('Login failed!');
     }
   };
-
+  
+  // ... JSX remains the same
   return (
     <div className='auth-container'>
       <form className='auth-form' onSubmit={handleSubmit(onSubmit)}>

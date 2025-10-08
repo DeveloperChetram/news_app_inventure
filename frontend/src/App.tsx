@@ -5,25 +5,30 @@ import Register from './components/Register';
 import Home from './components/Home';
 import NewsDetail from './components/NewsDetail';
 import AdminDashboard from './components/AdminDashboard';
-import Navbar from './components/Navbar'; // Import the Navbar component
-// import Footer from './components/Footer';
+import Navbar from './components/Navbar';
+import AdminRoute from './components/AdminRoute'; // Import the protected route
 import './App.css';
 
 const App = () => {
   return (
     <Router>
       <div className='app-container'>
-        <Navbar /> {/* Uncomment this line */}
+        <Navbar />
         <main className='main-content'>
           <Routes>
+            {/* Public Routes */}
             <Route path='/' element={<Home />} />
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
             <Route path='/news/:id' element={<NewsDetail />} />
-            <Route path='/admin' element={<AdminDashboard />} />
+
+            {/* Protected Admin Routes */}
+            <Route element={<AdminRoute />}>
+              <Route path='/admin' element={<AdminDashboard />} />
+              {/* You can add more admin-only routes here */}
+            </Route>
           </Routes>
         </main>
-        {/* <Footer /> */}
       </div>
     </Router>
   );
