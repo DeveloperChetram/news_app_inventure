@@ -1,0 +1,30 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+dist/
+build/
+.env
+.DS_Store
+
+# VSCode
+.vscode/
+
+# Logs
+logs/
+*.log
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Icon?
+Desktop.ini
+
+# IDEs
+.idea/
+*.iml
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
