@@ -1,7 +1,7 @@
 import { toast } from 'react-toastify';
 import API from '../../config/api'; // Updated import path
 import { authRequest, authSuccess, authFailure, logoutSuccess } from '../slices/authSlice';
-import { AppDispatch } from '../store';
+import type { AppDispatch } from '../store';
 
 export const loginUser = async (dispatch: AppDispatch, data: object) => {
   dispatch(authRequest());

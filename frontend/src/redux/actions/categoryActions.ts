@@ -6,7 +6,7 @@ import {
   categoryFailure,
   getCategoriesSuccess,
 } from '../slices/categorySlice';
-import type { AppDispatch } from '../store';
+import type { AppDispatch } from '../store.js';
 
 export const fetchAllCategories = async (dispatch: AppDispatch) => {
   dispatch(categoryRequest());

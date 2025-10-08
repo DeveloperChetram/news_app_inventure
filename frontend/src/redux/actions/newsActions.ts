@@ -6,7 +6,7 @@ import {
   newsFailure,
   getNewsSuccess,
 } from '../slices/newsSlice';
-import type { AppDispatch } from '../store';
+import type { AppDispatch } from '../store.js';
 
 export const fetchAllNews = async (dispatch: AppDispatch) => {
   dispatch(newsRequest());

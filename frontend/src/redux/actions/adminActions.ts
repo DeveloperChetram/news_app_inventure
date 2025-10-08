@@ -7,7 +7,7 @@ import {
   getNewsSuccess,
   getCategoriesSuccess,
 } from '../slices/adminSlice';
-import { AppDispatch } from '../store';
+import type { AppDispatch } from '../store.js';
 
 // News Actions
 export const createNews = (data: object) => async (dispatch: AppDispatch) => {

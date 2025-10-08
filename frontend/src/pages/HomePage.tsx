@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { AppDispatch, RootState } from '../redux/store';
+import type { RootState } from '../redux/store';
 import { fetchAllNews } from '../redux/actions/newsActions';
 import NewsCard from '../components/NewsCard';
 import '../styles/HomePage.css';
 
 const HomePage: React.FC = () => {
-  const dispatch: AppDispatch = useDispatch();
+  const dispatch = useDispatch();
   const { news, loading } = useSelector((state: RootState) => state.news);
 
   useEffect(() => {
