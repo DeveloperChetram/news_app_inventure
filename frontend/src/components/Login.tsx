@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import axios from 'axios';
+import api from '../api/axios'; // Import the new api instance
 import { useNavigate } from 'react-router-dom';
 import '../styles/Auth.css';
 
@@ -14,10 +14,8 @@ const Login = () => {
 
   const onSubmit = async (data) => {
     try {
-      const response = await axios.post(
-        'http://localhost:3000/api/auth/login',
-        data
-      );
+      // Use the pre-configured 'api' instance
+      const response = await api.post('/api/auth/login', data);
       console.log(response.data);
       navigate('/');
     } catch (error) {
