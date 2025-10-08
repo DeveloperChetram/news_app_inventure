@@ -1,9 +1,9 @@
 import { toast } from 'react-toastify';
-import API from '../../config/api'; // Updated import path
+import API from '../../config/api';
 import { authRequest, authSuccess, authFailure, logoutSuccess } from '../slices/authSlice';
 import type { AppDispatch } from '../store';
 
-export const loginUser = async (dispatch: AppDispatch, data: object) => {
+export const loginUser = (data: object) => async (dispatch: AppDispatch) => {
   dispatch(authRequest());
   try {
     const response = await API.post('/auth/login', data);
@@ -19,7 +19,7 @@ export const loginUser = async (dispatch: AppDispatch, data: object) => {
   }
 };
 
-export const registerUser = async (dispatch: AppDispatch, data: object) => {
+export const registerUser = (data: object) => async (dispatch: AppDispatch) => {
   dispatch(authRequest());
   try {
     const response = await API.post('/auth/register', data);
@@ -35,7 +35,7 @@ export const registerUser = async (dispatch: AppDispatch, data: object) => {
   }
 };
 
-export const logoutUser = (dispatch: AppDispatch) => {
+export const logoutUser = () => (dispatch: AppDispatch) => {
   localStorage.removeItem('user');
   dispatch(logoutSuccess());
   toast.info('You have been logged out.');

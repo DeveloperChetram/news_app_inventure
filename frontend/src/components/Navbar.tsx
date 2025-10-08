@@ -1,17 +1,16 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
-import { RootState, AppDispatch } from '../redux/store';
+import { useAppSelector, useAppDispatch } from '../redux/hooks';
 import { logoutUser } from '../redux/actions/authActions';
 import '../styles/Navbar.css';
 
 const Navbar: React.FC = () => {
-  const { isAuthenticated, user } = useSelector((state: RootState) => state.auth);
-  const dispatch: AppDispatch = useDispatch();
+  const { isAuthenticated, user } = useAppSelector((state) => state.auth);
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    logoutUser(dispatch);
+    dispatch(logoutUser());
     navigate('/login');
   };
 
