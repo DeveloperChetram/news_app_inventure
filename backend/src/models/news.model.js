@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 const newsSchema = new mongoose.Schema({
     title:{
         type:String,
+        
         required:true
     },
     content:{
@@ -10,12 +11,12 @@ const newsSchema = new mongoose.Schema({
         required:true
     },
     categoryId:{
-        type:Schema.Types.ObjectId,
+        type:mongoose.Schema.Types.ObjectId,
         ref:'category',
         required:true
     },
     authorId:{
-        type:Schema.Types.ObjectId,
+        type:mongoose.Schema.Types.ObjectId,
         ref:'user',
         required:true
     },
