@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import api from '../api/axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setCredentials } from '../redux/authSlice'; // Import the action
 import '../styles/Auth.css';
@@ -63,6 +63,9 @@ const Login = () => {
         <button className='auth-button' type='submit'>
           Login
         </button>
+        <p className="auth-switch">
+  Don't have an account? <Link to="/register">Register</Link>
+</p>
       </form>
     </div>
   );

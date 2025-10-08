@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import api from '../api/axios'; // Import the new api instance
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../styles/Auth.css';
 
 const Register = () => {
@@ -54,6 +54,9 @@ const Register = () => {
         <button className='auth-button' type='submit'>
           Register
         </button>
+        <p className="auth-switch">
+  Already have an account? <Link to="/login">Login</Link>
+</p>
       </form>
     </div>
   );

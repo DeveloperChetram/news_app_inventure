@@ -33,15 +33,15 @@ const NewsList = () => {
     }
   };
 
-  return (
+return (
     <div className='dashboard-section'>
       <h2>Manage News</h2>
       {news.map((item) => (
         <div key={item._id} className='news-item'>
           <span>{item.title} - <strong>{item.published ? 'Published' : 'Draft'}</strong></span>
           <div>
-            <Link to={`/admin/news/edit/${item._id}`} className='nav-button'>Edit</Link>
-            <button onClick={() => handleDelete(item._id)} className='nav-button'>Delete</button>
+            <Link to={`/admin/news/edit/${item._id}`} className='nav-button btn-edit'>Edit</Link>
+            <button onClick={() => handleDelete(item._id)} className='nav-button btn-delete'>Delete</button>
           </div>
         </div>
       ))}
