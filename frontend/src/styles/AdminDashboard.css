@@ -1,15 +1,64 @@
 .admin-dashboard {
   padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.admin-dashboard h1 {
+  margin-bottom: 2rem;
 }
 
 .dashboard-section {
+  background-color: var(--surface-color);
   margin-bottom: 2rem;
-  border: 1px solid #ccc;
-  padding: 1.5rem;
-  border-radius: 5px;
+  border: 1px solid var(--border-color);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.dashboard-section h2 {
+  margin-bottom: 1.5rem;
 }
 
 .news-item, .category-item {
-  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
   padding: 1rem 0;
+}
+
+.news-item:last-child, .category-item:last-child {
+  border-bottom: none;
+}
+
+.news-item span {
+  font-weight: 500;
+}
+
+.news-item div {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.news-item .nav-button {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+}
+
+/* Specific button styles */
+.btn-edit {
+  background-color: #ffc107;
+  color: #212529;
+}
+.btn-edit:hover {
+  background-color: #e0a800;
+}
+
+.btn-delete {
+  background-color: var(--danger-color);
+}
+.btn-delete:hover {
+  background-color: var(--danger-hover-color);
 }
