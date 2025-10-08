@@ -2,12 +2,14 @@ import { configureStore } from '@reduxjs/toolkit';
 import authReducer from './slices/authSlice';
 import newsReducer from './slices/newsSlice';
 import categoryReducer from './slices/categorySlice';
+import adminReducer from './slices/adminSlice'; // Import the new reducer
 
 export const store = configureStore({
   reducer: {
     auth: authReducer,
     news: newsReducer,
     categories: categoryReducer,
+    admin: adminReducer, // Add the admin reducer
   },
 });
 

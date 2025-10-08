@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { AppDispatch, RootState } from '../redux/store';
-import { fetchAllNews } from '../redux/actions/newsActions'; // You'll create this
+import { fetchAllNews } from '../redux/actions/newsActions';
 import NewsCard from '../components/NewsCard';
 import '../styles/HomePage.css';
-import { useDispatch } from 'react-redux';
 
 const HomePage: React.FC = () => {
   const dispatch: AppDispatch = useDispatch();
